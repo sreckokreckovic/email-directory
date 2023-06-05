@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/{contact}/destroy', [ContactController::class, 'destroy'])->name('contact.destroy');
     Route::get('/{contact}/show-more', [ContactController::class, 'showMore'])->name('contact.show-more');
     Route::get('/{contact}/edit', [ContactController::class, 'edit'])->name('contact.edit');
-    Route::put('/{contact}/update', [ContactController::class, 'update'])->name('contact.update');
+    Route::put('/contact/{contact}/update', [ContactController::class, 'update'])->name('contact.update');
 });
 
 require __DIR__.'/auth.php';

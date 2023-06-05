@@ -18,7 +18,7 @@
     <div class="offset-5 mt-5">
         <div class="card" style="width: 18rem;">
             @if($image!=NULL)
-                <img src="{{asset($image->path)}}" class="card-img-top" ">
+                <img src="{{asset($image->path)}}" class="card-img-top" >
             @else
                 <img src="{{asset('defaultavatar.png')}}"
                      class="card-img-top">

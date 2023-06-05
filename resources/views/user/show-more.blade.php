@@ -12,9 +12,7 @@
             crossorigin="anonymous"></script>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
 
-        </h2>
     </x-slot>
 
     <div class="offset-5 mt-5">
@@ -22,7 +20,7 @@
             @if($image!=NULL)
                 <img src="{{asset($image->path)}}" class="card-img-top" ">
             @else
-                <img src="{{asset('storage/avatars/6txkMAN49WHKOeR8MJSchdKsXiuylHYGMFpfKdOi.png')}}"
+                <img src="{{asset('defaultavatar.png')}}"
                      class="card-img-top">
             @endif
             <div class="card-body">

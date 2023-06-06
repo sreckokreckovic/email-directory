@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\UpdateContactRequest;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -22,7 +23,7 @@ class ContactController extends Controller
     {
 
         $contacts = Contact::query()->where('user_id', auth()->id())->paginate(7);
-        return view('user.index', compact('contacts', ));
+        return view('user.index', compact('contacts',));
 
     }
 
@@ -55,12 +56,12 @@ class ContactController extends Controller
         ]);
     }
 
-    public function destroy(Contact $contact,Request $request): RedirectResponse
+    public function destroy(Contact $contact, Request $request): RedirectResponse
     {
-        $redirectPage=$this->calculatePage($request->perPage,$request->total,$request->currentPage);
+        $redirectPage = $this->calculatePage($request->perPage, $request->total, $request->currentPage);
         $contact->delete();
 
-        return redirect()->route('contact.index',['page'=>$redirectPage]);
+        return redirect()->route('contact.index', ['page' => $redirectPage]);
     }
 
     public function showMore(Contact $contact)

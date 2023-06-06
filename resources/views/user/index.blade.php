@@ -31,8 +31,7 @@
                         data-bs-target="#addContact">
                     Add new contact
                 </button>
-                <button type="button" class="float-end  btn btn-primary "
-                ">
+                <button type="button" class="float-end  btn btn-primary ">
                 Download
                 </button>
                 <table class="table mt-3">

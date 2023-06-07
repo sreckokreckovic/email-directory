@@ -16,7 +16,15 @@
             Friends list
         </h2>
     </x-slot>
+<div class="row">
+    <div class="col-6 m-2">
+        <button type="button" class=" btn btn-primary col-3" data-bs-toggle="modal"
+                data-bs-target="#addContact">
+            Add new contact
+        </button>
 
+    </div>
+</div>
     <div class="container">
         <div class="row">
 
@@ -27,10 +35,7 @@
 
         <div class="row">
             <div class="col-6 offset-3 mt-5">
-                <button type="button" class=" btn btn-primary col-3" data-bs-toggle="modal"
-                        data-bs-target="#addContact">
-                    Add new contact
-                </button>
+
                 <button type="button" class="float-end  btn btn-primary ">
                 Download
                 </button>

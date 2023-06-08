@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ContactExport;
 use App\Http\Requests\UpdateContactRequest;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,15 +17,24 @@ use App\Models\Image;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ContactController extends Controller
 {
+
     public function index()
     {
 
         $contacts = Contact::query()->where('user_id', auth()->id())->paginate(7);
         return view('user.index', compact('contacts',));
 
+    }
+
+    public function export()
+    {
+        $contacts = Contact::query()->where('user_id', auth()->id())->get();
+
+        return Excel::download(new ContactExport($contacts), 'contacts.xlsx');
     }
 
     public function store(StoreContactRequest $request): RedirectResponse

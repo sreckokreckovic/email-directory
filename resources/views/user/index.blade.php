@@ -16,16 +16,17 @@
             Friends list
         </h2>
     </x-slot>
-<div class="row">
-    <div class="col-6 m-2">
-        <button type="button" class=" btn btn-primary col-3" data-bs-toggle="modal"
-                data-bs-target="#addContact">
-            Add new contact
-        </button>
-
-    </div>
-</div>
     <div class="container">
+    <div class="row">
+        <div class="col-6 m-2">
+            <button type="button" class=" btn btn-primary col-3" data-bs-toggle="modal"
+                    data-bs-target="#addContact">
+                Add new contact
+            </button>
+
+        </div>
+    </div>
+
         <div class="row">
 
             @if($contacts->isEmpty())
@@ -34,12 +35,12 @@
         </div>
 
         <div class="row">
-            <div class="col-6 offset-3 mt-5">
+            <div class="col-6 offset-3 ">
 
-                <button type="button" class="float-end  btn btn-primary ">
-                Download
-                </button>
-                <table class="table mt-3">
+                <a href="{{route('export-contacts')}}" class="float-end  btn btn-primary ">
+                    Export to excel
+                </a>
+                <table class="table ">
                     <thead>
                     <th class="col-6">Contact name</th>
                     <th>Actions</th>

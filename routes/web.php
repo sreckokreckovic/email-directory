@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/{contact}/show-more', [ContactController::class, 'showMore'])->name('contact.show-more');
     Route::get('/{contact}/edit', [ContactController::class, 'edit'])->name('contact.edit');
     Route::put('/contact/{contact}/update', [ContactController::class, 'update'])->name('contact.update');
+    Route::get('export-contacts', [ContactController::class, 'export'])->name('export-contacts');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
